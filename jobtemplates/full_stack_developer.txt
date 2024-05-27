@@ -1,0 +1,39 @@
+
+Fullstack Developer
+
+I am writing to express my interest in as a Full Stack Developer due to my interest in software.
+My academic background in AI, Software Development/Engineering.
+
+Motivation
+My passion for technology is motivaed by my genuine curiosity and eagerness to work with complex challenges both independently and as part of a team.
+I am particularly drawn to AI solutions, including aspects like security, GDPR compliance, and the AI Act.
+The dynamic nature of this role, coupled with my strong communication skills 
+and a deep desire to continued learning, makes me an ideal candidate who can bring fresh perspectives and innovative solutions.
+
+I thrive in project oriented environments that blend DevOps, DevSecOps, and MLOps, and I am excited about the prospect of contributing to your team by leveraging my interest in AI trends and technology.
+The opportunity to directly enhance your AI solutions through building robust data pipelines, fostering knowledge retention, and ensuring ethical considerations in all phases of development is particularly appealing to me.
+
+Skills
+My extensive experience in the hospitality sector has honed my communication skills, enabling me to effectively bridge the gap between business objectives and technical requirements.
+I am adept at documenting client needs and translating them into actionable development goals that ensure sustainability and long-term success.
+My approach is thoughtful, questioning, and aligned with the strategic goals of my collaborators.
+
+Education
+In the summer of 2023, I completed my Master's degree in Data Science ICT.
+My thesis utilized foundational transformer models to semi-automatically generate PEST analyses, which were enhanced with Named Entity Recognition and summarization techniques.
+This project involved analyzing publicly available data to provide macroeconomic insights, particularly concerning market expansion.
+The objective was to synthesize summaries from vectorized unstructured data, retrieving information based on semantic similarity and ranking through general-purpose language models.
+
+Additionally, I hold a Professional Bachelor's Degree in Economics & IT.
+For my bachelor's thesis, I developed an enterprise architecture strategy for EnviroProcess Denmark and its parent company, EnviroProcess AB.
+This strategy was designed to align IT initiatives with the subsidiary’s core competencies, specific service knowledge, unique industry insights, and overall project execution.
+
+Continued Learning
+I am committed to continuously enhancing my skills and am currently exploring areas such as knowledge engineering, decision intelligence, and multi-agent learning frameworks.
+Additionally, I am preparing for Azure certifications, including AI-900 and AI-102, to stay current with the latest advancements in AI, particularly within the domains of NLP and generative AI.
+
+Thank you for your time
+I look forward to the chance to discuss how my background, ambitions, and traits align with the goals of [Company Name]. I am enthusiastic about potentially contributing to your projects and would appreciate the opportunity to discuss this further.
+
+Warm regards,
+Jannik Mangabat Bach Sørensen
