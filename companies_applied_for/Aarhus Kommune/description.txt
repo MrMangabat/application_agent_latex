@@ -1,0 +1,42 @@
+VI SØGER EN DATA SCIENTIST, DER VIL GÅ FORAN SAMMEN MED OS 
+I Aarhus Kommune er vi ambitiøse og går forrest, når vi skaber fundamenterne for fremtidens velfærd. Også når det gælder ibrugtagning af teknologi, der kan hjælpe os med at opnå vores mål om at være en god by for alle. Derfor søger vi en ambitiøs – men gerne nyuddannet – data scientist, der har lyst til at træde nye stier sammen med os.
+Vi søger en data scientist, der kan lide at gå på opdagelse i data og se muligheder sammen med kolleger – enten i teamet eller på tværs af kommunen. Vi søger en, der har erfaring med at udvikle, træne og evaluere ML-modeller. En, der er nysgerrig på nye metoder og værktøjer. Særlig har vi lige nu fokus på sprogmodeller (hvem har ikke det?). Vi er indgået i et samarbejde med en række aktører om at skabe en ny, dansk sprogmodel i Dansk Sprogmodel Konsortium, og det er blandt andet derfor, vi særligt har brug for dig lige nu! Der er dog også mange andre områder, vi gerne vil have, du kaster dig over – det kunne være klassificering af henvendelser i vores support, understøttelse af vores juridiske afdeling, arbejdet med at automatisere referater mv. Mulighederne er (næsten) uendelige!
+Vi tilbyder dig en fantastisk arbejdsplads med gode arbejdsforhold, godt kollegialt sammenhold, højt til loftet og med stor mulighed for at præge dit nye arbejde som data scientist i Borgmesterens Afdeling.
+I Borgmesterens Afdeling er vi ambitiøse og forsøger at rykke hurtigt på aktuelle og værdiskabende dagsordener. Derfor vil du opleve en omskiftelig hverdag, hvor du kan bruge din faglighed på mange forskellige måder.
+Masser af gode, dygtige kolleger – både i teamet og på tværs af kommunen
+I sektionen Digitale Fundamenter, hvor du vil blive placeret, sidder dygtige og erfarne kolleger, der arbejder med data og arkitektur, som understøtter hele Aarhus Kommunes digitale processer. Sektionen indeholder blandt andet et datateam, der leverer data til mange forskellige formål fx dataintegrationer til tværgående fagsystemer, data til analyse, rapportering og ledelsesinformationsløsninger. Vores data og processer er i høj grad forankret omkring Microsoft SQL Server og af den årsag bruger vi også en stribe almene Microsoft-værktøjer. I sektionen har man allerede længe arbejdet med at forberede arbejdet med machine learning og understøttet andre afdelinger, men det er først med dig, at vi for alvor tager hul på udviklingsopgaven lokalt. Vi har dog allerede mange kolleger, der sidder i starthullerne for at galoppere afsted sammen med dig!
+Du får en central rolle i at opbygge området for kunstig intelligens i Borgmesterens Afdeling – bl.a. vil du, i samarbejde med dine kolleger, etablere relevante data- og udviklingsplatforme og opbygge vores kompetencer inden for data science og klargøring af data til understøttelse af ibrugtagningen af AI-teknologier.
+Derudover vil du, med din data science-erfaring, faglighed og indsigt, i samarbejde med vores konsulenter, være med til at vurdere og udpege de indsatsområder, hvor vi bedst anvender kunstig intelligens. Udover at anvende sprogmodeller til at effektivisere og kvalitetssikre den administrative opgave, ser vi ind i områder som økonomi, jura, it-support mv., hvor vi har ambitioner om at benytte machine learning. Mulighederne i Borgmesterens Afdeling og resten af kommunen er mangfoldige og derfor er det vigtigt, at du hjælper med at udvælge få attraktive indsatsområder, som vi kommer i dybden med og ser resultater af. Dette gælder i særlig grad i forhold til vores arbejde med at levere usecases og klargjorte data til brug i og sammen med Dansk Sprogmodel Konsortium.
+Din vigtigste opgave er at arbejde med vores data og udvikle, træne og evaluere modeller. Dette i tæt samarbejde med bl.a. dine kolleger i sektionen og vores driftsområder, hvor sidstnævnte har dyb faglighed og indsigt i de faglige processer.
+Idet stillingen er ny, så har du rig mulighed for at udforme og påvirke indholdet. Bl.a. valg af platforme, programmeringssprog, frameworks, indsatsområder mv. Aarhus Kommune er ved at afslutte en helhedsorienteret AI-analyse, der vil præsentere en række principper, som vi i kommunen skal arbejde efter – herunder vil der være en opgave i at implementere de beslutninger og retning, som er givet strategisk sammen med gode ledere og kolleger.
+Dine nærmeste kolleger har du i sektionen, hvor du ansættes. Du bliver en del af datateamet, og vil derfor hurtigt få et dybt kendskab til vores nuværende dataområder, arbejdsopgaver og metoder. Derudover har du tætte samarbejdsrelationer med dine kolleger fra sektionerne Strategi og Styring og Servicedesign.
+Og så har vi som nævnt mange samarbejdsfora på tværs af kommunen, hvor der sidder dygtige kolleger (blandt andet en taskforce, der arbejder med koordinering af AI-indsatser på tværs af kommunen samt et udviklernetværk for andre data scientists mv.), der arbejder med store, ambitiøse projekter. Både inden for Aarhus Kommunes mure og på tværs af andre kommuner. Med virksomheder, offentlige myndigheder og universiteter. Med andre nordiske byer og i større EU-projekter.
+Dine kompetencer
+De Kompetencer, Vi Gerne Ser Du Har, Er
+en relevant uddannelse, fx indenfor computer science, matematik, statistik eller lignende. 
+erfaring med data science/machine learning – evt. fra tidligere job, herunder tilrettelæggelse af datasæt, der egner sig til træning af både simple og mere komplekse modeller 
+erfaring med at opstille hypoteser på såvel struktureret som ustruktureret data, og du kan udtrykke dine analytiske metoder i et eller flere passende programmeringssprog 
+erfaring med at udvikle, træne og evaluere modeller, og forstår vigtigheden af at gøre det på en systematisk og reproducerbar måde 
+at du måske særligt interesserer dig for/har erfaring med NLP, snarere end andre typer ML/AI, da det særligt er tekstdata, vi ser et potentiale i at arbejde med 
+at du er struktureret, analytisk og har en god forestillingsevne, du bruger til at finde løsninger på problemstillinger ”i den virkelige verden” 
+at du er kreativ, iderig og elsker at udvikle nye løsninger i samarbejde med andre fagligheder 
+at du er god til at kommunikere komplekse problemstillinger til bl.a. ledelse og samarbejdspartnere 
+at du har forståelse for etiske og juridiske problemstillinger ifm. data science og kunstig intelligens som bredt begreb 
+at du evt. har erfaring med Microsoft-infrastruktur 
+at du evt. har erfaring med at ”deploye” virksomme modeller i produktionsmiljøer - men da du måske er nyuddannet, er dette ikke noget, vi forventer. 
+Velkommen til afdelingen Fælles It og Digitalisering
+Vi Tilbyder Diget dynamisk arbejdsmiljø med en bred opgaveportefølje 
+en god, engageret og sjov kollegaflok og ledere i en afdeling med uformel omgangstone og et stort fokus på socialt samvær 
+høj grad af medindflydelse på din opgavesammensætning 
+udfordrende opgaver, der sørger for, at du udvikler dine kompetencer 
+mulighed for faglig sparring ved både kolleger og leder. 
+fleksible arbejdstider og god balance mellem arbejds- og privatliv. 
+
+Derfor Skal Du Vælge Os
+Med et job i Borgmesterens Afdeling er du tæt på beslutningerne i landets næststørste by.
+Du kommer til at arbejde i de centrale it-afdelinger i Aarhus Kommune, som har opgaver, der går tværs af organisationen. Vi skaber fremtidssikrede it-løsninger og stabil drift for både medarbejdere og borgere. 
+Når du arbejder for os, vil du møde: 
+Faglige ambitioner 
+Komplekse opgaver 
+Stor tillid og fleksibilitet i hverdagen 
+Se mere om hvem vi er, og hvad vi laver på digital.aarhus.dk. 

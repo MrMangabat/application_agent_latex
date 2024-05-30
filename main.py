@@ -1,17 +1,17 @@
-# import os
-# import re
-# from operator import itemgetter
-# from utils import split_text_at_punctuation
-# from langchain.document_loaders.text import TextLoader
-# from langchain_community.document_loaders import DirectoryLoader
-# from langchain_community.embeddings import HuggingFaceEmbeddings
-# from langchain.chat_models.openai import ChatOpenAI
-# from langchain_core.prompts import ChatPromptTemplate
-# from langchain_core.output_parsers import PydanticOutputParser
-# from langchain.chains.combine_documents import create_stuff_documents_chain
-# from langchain.pydantic_v1 import BaseModel, Field
-# from langchain.vectorstores import qdrant
-# from config import GPT_API
+import os
+import re
+from operator import itemgetter
+from utils import split_text_at_punctuation
+from langchain.document_loaders.text import TextLoader
+from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain.chat_models.openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import PydanticOutputParser
+from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain.pydantic_v1 import BaseModel, Field
+from langchain.vectorstores import qdrant
+from config import GPT_API
 
 # # Configuration
 # os.environ["OPENAI_API_KEY"] = GPT_API
