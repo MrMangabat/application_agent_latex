@@ -5,6 +5,20 @@ import tiktoken
 
 
 #some regex to remove characters that intervene with latex commands
+def validate_words(do_not_use_words, *args):
+    false_count = 0
+    true_count = 0
+    forbidden_words_used = []
+
+    for arg in args:
+        words = arg.split()
+        for word in words:
+            if word in do_not_use_words:
+                forbidden_words_used.append(word)
+    
+    # Return a tuple with the counts and the list of forbidden words used
+    return true_count, false_count, forbidden_words_used
+
 def check_latex_safety(*args):
     # Dictionary to map LaTeX special characters to their safe equivalents
     replacements = {
@@ -22,14 +36,17 @@ def check_latex_safety(*args):
         '*': ' ',           # asterisk to space
         '-': ' '            # hyphen to space
     }
+    
     # Regex pattern to match any LaTeX special character
     pattern = r'[\\{}#%&_^\~$\/\*\-]'
     
     true_count = 0
     false_count = 0
+
     # Function to replace matched characters
     def replace_match(match):
         return replacements[match.group(0)]
+    
     # Process each input text
     results = []
     for text in args:
