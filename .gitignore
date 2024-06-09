@@ -2,6 +2,7 @@ config.py
 jobtemplates/*
 companies_applied_for/*
 
+
 __pycache__/
 *.pyc
 env/
