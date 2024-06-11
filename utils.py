@@ -95,3 +95,12 @@ def print_data_types(*args):
         print("data/objecttype type: ", type(arg))
         print("\n")
         print("what is being validated:", arg)
+
+
+def new_validate_words(component_value):
+    # Dummy implementation for demonstration purposes
+    do_not_use_words = ["error", "fail", "problem"]
+    found_words = [word for word in do_not_use_words if word in component_value]
+    if found_words:
+        raise ValueError(f"Invalid words found: {', '.join(found_words)}")
+    return component_value
