@@ -2,6 +2,27 @@
 import re
 import tiktoken
 
+import os
+import sys
+
+def set_project_root():
+    # Get the directory of the current file (utils.py)
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Define the project root directory (which is the same as the current directory)
+    project_root = current_dir
+    
+    # Add the project root to the PYTHONPATH if it's not already included
+    if project_root not in sys.path:
+        sys.path.append(project_root)
+    
+    # Change the current working directory to the project root
+    os.chdir(project_root)
+
+    print(f"Current working directory set to: {os.getcwd()}")
+    print(f"PYTHONPATH set to include: {project_root}")
+    
+    return project_root
 
 
 #some regex to remove characters that intervene with latex commands
