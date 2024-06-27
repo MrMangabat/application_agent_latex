@@ -1,1 +1,0 @@
-"Validate, that the generated cover letter is not using any of these words found here {forbidden_words}//"

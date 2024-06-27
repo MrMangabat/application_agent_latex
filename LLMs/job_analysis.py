@@ -5,7 +5,7 @@ from langchain.pydantic_v1 import BaseModel, Field
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_openai import ChatOpenAI
 ### Internal imports ###
-from prompt_templates.analyse_vacant_position import create_analysis_prompt, analysis_parser
+from prompt_templates.analyse_vacant_position_prompt import create_analysis_prompt, analysis_parser
 from utils import set_project_root
 
 ### setting environment variables ###

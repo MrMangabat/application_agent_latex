@@ -9,11 +9,15 @@ from langchain_core.output_parsers import PydanticOutputParser
 from utils import set_project_root
 from retrieve_documents.retrieve_cv import cv_retrieve
 from retrieve_documents.retrieve_templates import template_retriever
+
 from LLMs import LLM_model
 from LLMs.job_analysis import initial_analysis_chain
 from LLMs.generate_cover_letter import cover_letter_chain
-from prompt_templates.analyse_vacant_position import analysis_parser
+from LLMs.validation_chain import validation_chain
+
+from prompt_templates.analyse_vacant_position_prompt import analysis_parser
 from prompt_templates.generate_cover_letter_prompt import cover_letter_parser
+from prompt_templates.sentence_word_validation_prompt import validator_parser
 ### setting environment variables
 ### Setting root
 # Call the function to set the project root and update the PYTHONPATH
@@ -118,25 +122,26 @@ if __name__ =="__main__":
 
     #fetching cover letter templates
     template_doc = template_retriever("jobtemplates")
-    template_doc.invoke(some_job)
+    found_template = template_doc.invoke(some_job)
 
-    print("-------------------------------- template_doc --------------------------------")
-    print(template_doc, "\n")
-    print("-------------------------------- cv --------------------------------")
-    print(cv_doc)
+    # print("-------------------------------- template_doc --------------------------------")
+    # print(found_template, "\n")
+    # print("-------------------------------- cv --------------------------------")
+    # print(cv_doc)
     # initial chain
-#     output = initial_analysis_chain(some_job, draft_skills,llm_model = llm_model, parser = analysis_parser)
+    output = initial_analysis_chain(some_job, draft_skills,llm_model = llm_model, parser = analysis_parser)
     
 
-#     # generate cover letter chain
-#     some_cover_letter = cover_letter_chain(
-#         skills = draft_skills,
-#         llm_model = llm_model,
-#         cv= cv_doc,
-#         document_template=retrieve_templates(),
-#         matching_skills=output.matching_skills,
-#         parser = cover_letter_parser
-#     )
+    # generate cover letter chain
+    some_cover_letter = cover_letter_chain(
+        skills = draft_skills,
+        llm_model = llm_model,
+        cv= cv_doc,
+        job_offer_analysis=output.analysis_output,
+        document_template=found_template,
+        matching_skills=output.matching_skills,
+        parser = cover_letter_parser
+    )
 
 #     print("\n")
 #     print("----------- OUTPUT TYPE ------------")
@@ -150,8 +155,26 @@ if __name__ =="__main__":
 #     print("----------END---------")
 #     print("\n")
 
-#     print("--------COVER LETTER CHAIN-----------")
+#     print(type(some_cover_letter))
 # for i in some_cover_letter:
+#     print("--------COVER LETTER CHAIN-----------")
 #     print(i)
 #     print("----------END---------")
 #     print("\n")
+validate_context_output = validation_chain(
+    llm_model = llm_model,
+    some_skills = draft_skills,
+    introduction = some_cover_letter.introduction,
+    motivation = some_cover_letter.motivation,
+    continued_learning = some_cover_letter.continued_learning,
+    thank_you = some_cover_letter.thank_you,
+    cv = cv_doc,
+    no_go_words = ["crucial for this role"],
+    parser = validator_parser
+)
+
+for i in validate_context_output:
+    print("--------VALIDATION CHAIN-----------")
+    print(i)
+    print("----------END---------")
+    print("\n")
