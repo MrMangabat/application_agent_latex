@@ -29,12 +29,11 @@ def validation_chain(
         thank_you: str,
         cv: str,
         no_go_words: list[str],
-        
         parser: PydanticOutputParser):
     
     pydantic_context_validator_formatter = validator_parser.get_format_instructions()
 
-    generate_cover_letter = validation_prompt(
+    generate_validation = validation_prompt(
         some_cv=cv,
         some_skills=some_skills, 
         some_introduction=introduction,
@@ -43,7 +42,7 @@ def validation_chain(
         some_thank_you=thank_you,
         some_no_go_words=no_go_words) | llm_model | parser
 
-    cover_letter = generate_cover_letter.invoke(
+    context_validation = generate_validation.invoke(
         {
             "curriculum_vitae": cv,
             "my_skills":some_skills,
@@ -56,4 +55,4 @@ def validation_chain(
         }
     )
 
-    return cover_letter
+    return context_validation
