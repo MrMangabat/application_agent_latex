@@ -31,8 +31,6 @@ def create_analysis_prompt(skillsets: list[str], job_to_apply: str) -> ChatPromp
     Identify the company name//
     Identify the job title//
     Identify the skills and technical experience required for the job vacancy provided here to be stored as a dictionary employee skill requirement//
-    Use these skills {my_skills} to conduct an analysis between job requirements and find matching skills//
-    Output should contain a list of matching skills required for the job vacancy//
     {format_messages}
     """
 
@@ -46,6 +44,9 @@ def create_analysis_prompt(skillsets: list[str], job_to_apply: str) -> ChatPromp
 
     human_analysis_template_str = """
     Given the job vacancy, you are to analyse the following in detail: {job_position}//
+    Use this list of skills {my_skills} to conduct an an mapping between job requirements and find matching skills//
+    Output should contain a list of matching skills required for the job vacancy//
+
     {format_messages}
     """
 

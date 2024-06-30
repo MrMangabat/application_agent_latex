@@ -28,7 +28,7 @@ def initial_analysis_chain(some_input: str, some_skills: list[str], llm_model: C
         {
             "job_position":some_input, 
             "my_skills":some_skills, 
-            "format_messages":pydantic_analysis_formatter
+            # "format_messages":pydantic_analysis_formatter
         }
     )
 
