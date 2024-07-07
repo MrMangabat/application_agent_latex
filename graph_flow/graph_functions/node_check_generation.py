@@ -45,16 +45,16 @@ def check_generation(state: GraphState) -> GraphState:
         try:
             validate_words(no_go_words, component_value)
         except ValueError as ve:
-            # print(f"Invalid words in: {component_name}: {ve}")
-            component_errors.append(f"Invalid words in {component_name}: {ve}")
+            print(f"Invalid words in: {component_name}: {ve}")
+            component_errors.append(f"Invalid words: {ve}")
             # print("INVALID WORDS: ", component_errors)
 
         ############################# INVALID SENTENCES #############################
         try:
             invalid_sentences(no_go_sentences, component_value)
         except ValueError as ve:
-            # print(f"Invalid sentences in: {component_name}: {ve}")
-            component_errors.append(f"Invalid sentences in {component_name}: {ve}")
+            print(f"Invalid sentences in: {component_name}: {ve}")
+            component_errors.append(f"Invalid sentences: {ve}")
             # print("INVALID SENTENCES: ", component_errors)
 
         if component_errors:
@@ -65,8 +65,8 @@ def check_generation(state: GraphState) -> GraphState:
     if all_errors:
         print("--- APPLICATION ERRORS ---")
         error_message = [(
-            "user", f"Failed with the following errors: {all_errors}. Review and reflect these errors and prior attempts to solve the issue. #1 state what you think went wrong and #2 find other words or sentenes without changing the context. Return full solution. Use the output structure with company_name, job_title, introduction, motivation, skills, education, continued_learning, thank_you.")]
-        messages += error_message
+            "user", f"Errors: {all_errors}. Review and reflect these errors and prior attempts to solve the issue. #1 state what you think went wrong and #2 find other words or sentenes without changing the context. Return full solution. Use the output structure with company_name, job_title, introduction, motivation, skills, education, continued_learning, thank_you.")]
+        messages = error_message
         error = "yes"
     else:
         print("--- NO APPLICATION ERRORS ---")

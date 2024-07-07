@@ -6,6 +6,8 @@ import os
 def retrieve_cover_letter(state: GraphState) -> GraphState:
     print("------ Retrieving cover letter ------")
     query_for_search = state['messages'][1]  # Extract the query from the state
+    query_for_search = query_for_search.content
+    print("\n------ RETRIEVAL START ------")
 
     # Construct the absolute path
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -18,7 +20,7 @@ def retrieve_cover_letter(state: GraphState) -> GraphState:
     cv_dir = os.path.join(base_dir, "../../curriculum_vitae")
     
     # Assuming a specific CV file name, modify as needed
-    cv_file_path = os.path.join(cv_dir, "JMangabat_CV.pdf")
+    cv_file_path = os.path.join(cv_dir, "JMangabat_CV_NEW.pdf")
     retrieve_cv = cv_retrieve(cv_file_path=cv_file_path)  # Your retriever initialization here
 
     print("------ RETRIEVAL END ------")

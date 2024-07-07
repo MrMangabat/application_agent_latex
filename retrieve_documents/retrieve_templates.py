@@ -1,5 +1,5 @@
 from langchain_community.document_loaders import DirectoryLoader
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Qdrant
 
 def template_retriever(directory_path: str, search_k: int = 1):

@@ -1,4 +1,4 @@
-from langchain.prompts import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate, PromptTemplate
+from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder, SystemMessagePromptTemplate, HumanMessagePromptTemplate, PromptTemplate
 from langchain.pydantic_v1 import BaseModel, Field
 from langchain_core.output_parsers import PydanticOutputParser
 
@@ -20,7 +20,8 @@ def create_cover_letter_prompt(
         cv: str,
         some_skills: list[str], 
         job_analysis: str, 
-        matching_skills: dict) -> ChatPromptTemplate:
+        matching_skills: dict,
+        messages: list[str]) -> ChatPromptTemplate:  # Added messages as an argument
     
     system_generate_cover_letter_template_str = """
         You are to assist in writing a professional cover letter for a job.
@@ -33,12 +34,13 @@ def create_cover_letter_prompt(
         The template job application must be in English.
         The unique skills can be in this list: {my_skills}.
         {format_cover_letter_messages}
+        {messages_placeholder}
     """
 
     SYSTEM_GENERATE_COVER_LETTER_PROMPT = SystemMessagePromptTemplate(
         prompt=PromptTemplate(
             template=system_generate_cover_letter_template_str,
-            input_variables=["semilarity_jobtemplate", "my_skills", "format_cover_letter_messages"],
+            input_variables=["semilarity_jobtemplate", "my_skills", "format_cover_letter_messages", "messages_placeholder"],
             partial_variables={"format_cover_letter_messages": cover_letter_parser.get_format_instructions()}
         )
     )
@@ -52,12 +54,13 @@ def create_cover_letter_prompt(
         I DO NOT have prior experience in a professional environment in programming, ONLY academia.
         I DO have prior experience in project management.
         {format_cover_letter_messages}
+        {messages_placeholder}  # Added messages placeholder
     """
 
     HUMAN_GENERATE_COVER_LETTER_PROMPT = HumanMessagePromptTemplate(
         prompt=PromptTemplate(
             template=human_generate_cover_letter_template_str,
-            input_variables=["analysis_output", "skill_match", "curriculum_vitae", "format_cover_letter_messages"],
+            input_variables=["analysis_output", "skill_match", "curriculum_vitae", "format_cover_letter_messages", "messages_placeholder"],
             partial_variables={"format_cover_letter_messages": cover_letter_parser.get_format_instructions()}
         )
     )
@@ -65,18 +68,20 @@ def create_cover_letter_prompt(
     cover_letter_messages = [SYSTEM_GENERATE_COVER_LETTER_PROMPT, HUMAN_GENERATE_COVER_LETTER_PROMPT]
 
     cover_letter_review_template = ChatPromptTemplate(
-        messages=cover_letter_messages
+        messages=cover_letter_messages,
+        input_variables=["semilarity_jobtemplate", "my_skills", "analysis_output", "skill_match", "curriculum_vitae", "format_cover_letter_messages", "messages_placeholder"]
     )
 
     pydantic_cover_letter_formatter = cover_letter_parser.get_format_instructions()
 
-    cover_letter_review_template.format_messages(
-        semilarity_jobtemplate = semilarity_document_template,
-        my_skills = some_skills, 
-        analysis_output = job_analysis,
-        skill_match = matching_skills,
-        curriculum_vitae = cv,
-        format_cover_letter_messages = pydantic_cover_letter_formatter,
+    formatted_messages = cover_letter_review_template.format_messages(
+        semilarity_jobtemplate=semilarity_document_template,
+        my_skills=some_skills, 
+        analysis_output=job_analysis,
+        skill_match=matching_skills,
+        curriculum_vitae=cv,
+        format_cover_letter_messages=pydantic_cover_letter_formatter,
+        messages_placeholder=messages  # Use a placeholder name
     )
 
-    return cover_letter_review_template
+    return cover_letter_review_template, formatted_messages

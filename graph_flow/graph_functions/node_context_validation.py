@@ -1,88 +1,53 @@
 from .node_graph_state import GraphState
-
 from LLMs.validation_chain import validation_context_chain
 from prompt_templates.sentence_word_validation_prompt import validator_parser
 
-
 def llm_validation(state: GraphState, llm_model) -> GraphState:
     messages = state['messages']
-    iterations = state['iterations']
-
-    cv_validation = state['cv']
+    context_iteration = state['context_iteration']
     no_go_words = state['words_to_avoid']
+    no_go_sentences = state['sentences_to_avoid']
     skill = state['unique_skills']
     generation = state['generation']
-    introduction = generation.introduction
-    motivation = generation.motivation
-    continued_learning = generation.continued_learning
-    thank_you = generation.thank_you
-
-    print("------ VALIDATE GENERATION ------")
-    print("\n")
-    print("------ STATES VALUES inside VALIDATE GENERATION ------")
-    print("\n")
-    print("------ CV VALIDATION ------")
-    print(len(cv_validation))
-    print("\n")
-    print("------ NO GO WORDS ------")
-    print(len(no_go_words))
-    print("\n")
-    print("------ SKILLS ------")
-    print(len(skill))
-    print("\n")
-    print("------ INTRODUCTION ------")
-    print(introduction)
-    print("\n")
-    print("------ MOTIVATION ------")
-    print(motivation)
-    print("\n")
-    print("------ CONTINUED LEARNING ------")
-    print(continued_learning)
-    print("\n")
-    print("------ THANK YOU ------")
-    print(thank_you)
-    print("\n")
-    print("------ END OF STATES VALUES ------")
-    print("\n")
     
-    context_validation_chain = validation_context_chain(
+    print("------ Validating context ------")
+    print(f"Messages: {messages}")
+    print(f"No-go words: {no_go_words}")
+    print(f"No-go sentences: {no_go_sentences}")
+    print(f"Skill set: {skill}")
+    print(f"Generation: {generation}")
+
+    context_validation = validation_context_chain(
         llm_model=llm_model,
-        cv=cv_validation,
         skill_set=skill,
-        introduction=introduction,
-        motivation=motivation,
-        continued_learning=continued_learning,
-        thank_you=thank_you,
-        no_go_words=no_go_words,
+        cover_letter_generation=generation,
+        some_no_go_words=no_go_words,
+        some_invalid_sentences=no_go_sentences,
+        messages=messages,
         parser=validator_parser
     )
-
+    
+    # Debug the context_validation
+    print("\n")
+    print("context_validation_chain:", context_validation)
+    print("\n")
+    
     # Add messages
-    messages += [
-        ('assistant', f"""Here is the attempt to generate a professional cover letter: {context_validation_chain.motivation}, {context_validation_chain.skills}, {context_validation_chain.continued_learning}, {context_validation_chain.thank_you}""")
+    messages = [
+        ('system', f""" Attempt to correct context: \n
+         {context_validation.motivation}, \n
+         {context_validation.skills}, \n
+         {context_validation.continued_learning}, \n
+         {context_validation.thank_you}""")
     ]
     
+    context_iteration += 1
     
-    print("------ VALIDATE GENERATION completed------")
-    print("\n")
-    print(" ------- ITERATION: ", iterations, " -------")
-    print(" ------ COVER LETTER ------")
-    print("\n")
-    print(context_validation_chain.introduction)
-    print("\n")
-    print(context_validation_chain.motivation)
-    print("\n")
-    print(context_validation_chain.skills)
-    print("\n")
-    print(context_validation_chain.continued_learning)
-    print("\n")
-    print(context_validation_chain.thank_you)
-    print("\n")
-    print(" ------ END OF VALIDATION-- ------")
-    print("\n")
-
+    print("\n------ CONTEXT VALIDATION", context_iteration, "------\n")
+    
+    # Return the updated state
     return {
-        "generation": context_validation_chain,
+        "generation": context_validation,
+        "context_iteration": context_iteration,
         "messages": messages,
-        "iterations": iterations,
     }

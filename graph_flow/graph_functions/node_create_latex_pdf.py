@@ -79,6 +79,8 @@ def create_latex_pdf(state: GraphState) -> GraphState:
     \\usepackage{{graphicx}} % Required for including images
     \\usepackage{{fancyhdr}} % Required for customizing headers and footers
     \\usepackage{{setspace}} % Remove paragraph indentation
+    \\usepackage{{hyperref}} % For adding links
+
     \\usepackage{{titlesec}} % Used to customize the \\section command
     \\usepackage[
         a4paper, % Paper size
@@ -119,34 +121,45 @@ def create_latex_pdf(state: GraphState) -> GraphState:
 
     \\subsection*{{\\finalJobtitle, \\finalCompanyName}}
         \\begin{{spacing}}{{1.2}}
-            {{\\finalIntroduction}}
-        \\end{{spacing}}
-        \\vspace*{{0mm}}
-
-
-        \\begin{{spacing}}{{1.2}}
-            {{\\finalMotivation}}
+            \\noindent{{\\finalIntroduction}}\\\\
         \\end{{spacing}}
         \\vspace*{{0mm}}
 
         \\begin{{spacing}}{{1.2}}
-            {{\\finalSkills}}
+            \\noindent{{\\finalMotivation}}\\\\
         \\end{{spacing}}
         \\vspace*{{0mm}}
+
+        \\begin{{spacing}}{{1.2}}
+            \\noindent{{\\finalSkills}}\\\\
+
+            \\noindent Some additional highlights of the benefit I will bring to your organisation include:
+                \\begin{{itemize}}
+                    \\item Capable of applying cutting-edge algorithms and models for complex problem-solving.
+                    \\item Strong consideration towards data integrity and regulations including AI-act.
+                    \\item Able to set up agents focused on enhancing efficiency.
+                    \\item Ability to collaborate with cross-functional teams to deliver high-impact projects.
+                \\end{{itemize}}
+        \\end{{spacing}}
+        \\vspace*{{0mm}}
+
 
     \\subsection*{{Continued Learning}}
         \\begin{{spacing}}{{1.2}}
-            {{\\finalContinuedLearning}}
+            \\noindent{{\\finalContinuedLearning}}\\\\
         \\end{{spacing}}
         \\vspace*{{0mm}}
 
     \\subsection*{{Thanks for your time}}
         \\begin{{spacing}}{{1.2}}
-            {{\\finalThankYou}}\\\\        
+            \\noindent{{\\finalThankYou}}\\\\        
         \\end{{spacing}}
 
     \\noindent Kind regards,\\\\
         Jannik Mangabat
+
+    \\footnote{{This cover letter is build with langgraph to employ self-correction, check \href{{https://github.com/MrMangabat/application_agent_latex}}{{GitHub}}}}.
+    \\footnote{{LinkedIn : \href{{https://www.linkedin.com/in/jannik-mangabat-bach-616586b9/}}{{Jannik Mangabat}}}}.
 
     \\end{{document}}
     """

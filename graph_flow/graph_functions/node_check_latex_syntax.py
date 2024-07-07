@@ -58,6 +58,11 @@ def check_latex_syntax(state: GraphState) -> GraphState:
         # Update the dictionary with the sanitized value
         generation_components[component_name] = safe_text
 
+    print("\n")
+    print("------ LaTeX syntax check complete ------")
+    print("\n")
+
+
     return {
         "generation": generation,
         "final": generation_components

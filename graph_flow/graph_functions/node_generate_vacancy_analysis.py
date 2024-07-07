@@ -18,8 +18,6 @@ def generate_vacancy_analysis(state: GraphState) -> GraphState:
         analysis_parser,
     )
     
-    
-
     state['generation'] = vacancy_analysis
     print("------ Vacancy analysis completed ------")
     
