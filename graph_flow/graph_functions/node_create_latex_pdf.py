@@ -8,7 +8,6 @@ def create_latex_pdf(state: GraphState) -> GraphState:
     # query_for_search = state['messages'][1]  # Extract the query from the state
 
     print("------ Creating LaTeX PDF ------")
-    print(final, "-------------- check if latex safe variables are here")
     
     # Access solution components
     company_name = final.get("company_name", "")
@@ -158,8 +157,8 @@ def create_latex_pdf(state: GraphState) -> GraphState:
     \\noindent Kind regards,\\\\
         Jannik Mangabat
 
-    \\footnote{{This cover letter is build with langgraph to employ self-correction, check \href{{https://github.com/MrMangabat/application_agent_latex}}{{GitHub}}}}.
-    \\footnote{{LinkedIn : \href{{https://www.linkedin.com/in/jannik-mangabat-bach-616586b9/}}{{Jannik Mangabat}}}}.
+    \\footnotetext[1]{{This cover letter is build with langgraph to employ self-correction, check \href{{https://github.com/MrMangabat/application_agent_latex}}{{GitHub}}}}.
+    \\footnotetext[2]{{LinkedIn : \href{{https://www.linkedin.com/in/jannik-mangabat-bach-616586b9/}}{{Jannik Mangabat}}}}.
 
     \\end{{document}}
     """
