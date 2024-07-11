@@ -3,16 +3,16 @@ config.py
 
 # Ignore all files inside these folders but not the folders themselves
 jobtemplates/*
-!jobtemplates/
+!jobtemplates/.gitkeep
 
 companies_applied_for/*
-!companies_applied_for/
+!companies_applied_for/.gitkeep
 
 latex_templates/*
-!latex_templates/
+!latex_templates/.gitkeep
 
 curriculum_vitae/*
-!curriculum_vitae/
+!curriculum_vitae/.gitkeep
 
 # Ignore Python cache and environment folders
 __pycache__/
