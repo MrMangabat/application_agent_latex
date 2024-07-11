@@ -10,12 +10,12 @@ def llm_validation(state: GraphState, llm_model) -> GraphState:
     skill = state['unique_skills']
     generation = state['generation']
     
-    print("------ Validating context ------")
-    print(f"Messages: {messages}")
-    print(f"No-go words: {no_go_words}")
-    print(f"No-go sentences: {no_go_sentences}")
-    print(f"Skill set: {skill}")
-    print(f"Generation: {generation}")
+    # print("------ Validating context", context_iteration, "------")
+    # print(f"Messages: {messages}")
+    # print(f"No-go words: {no_go_words}")
+    # print(f"No-go sentences: {no_go_sentences}")
+    # print(f"Skill set: {skill}")
+    # print(f"Generation: {generation}")
 
     context_validation = validation_context_chain(
         llm_model=llm_model,
@@ -28,9 +28,9 @@ def llm_validation(state: GraphState, llm_model) -> GraphState:
     )
     
     # Debug the context_validation
-    print("\n")
-    print("context_validation_chain:", context_validation)
-    print("\n")
+    # print("\n")
+    # print("context_validation_chain:", context_validation)
+    # print("\n")
     
     # Add messages
     messages = [
@@ -42,9 +42,10 @@ def llm_validation(state: GraphState, llm_model) -> GraphState:
     ]
     
     context_iteration += 1
-    
+    print("\n")
     print("\n------ CONTEXT VALIDATION", context_iteration, "------\n")
-    
+    print("\n")
+
     # Return the updated state
     return {
         "generation": context_validation,

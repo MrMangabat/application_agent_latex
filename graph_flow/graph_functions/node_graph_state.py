@@ -1,8 +1,8 @@
 from typing import TypedDict, List, Annotated
 from langgraph.graph.message import add_messages, AnyMessage
 
-max_iterations = 5
-max_context_iterations = 2
+max_iterations = 3
+max_context_iterations = 3
 
 class GraphState(TypedDict):
     """

@@ -15,8 +15,6 @@ def invalid_sentences(sentences: list[str], context: str) -> str:
     return context
 
 def check_generation(state: GraphState) -> GraphState:
-    
-
     # State
     messages = state['messages']
     iterations = state['iterations']
@@ -25,7 +23,7 @@ def check_generation(state: GraphState) -> GraphState:
     no_go_words = state['words_to_avoid']  # Get the list of words not to use
     no_go_sentences = state['sentences_to_avoid']  # Get the list of sentences not to use
     
-    print("---------------- CHECK GENERATION ----------------")
+    print("---------------- CHECK INITIAL ----------------")
 
     generation_components = {
         "company_name": generation.company_name,

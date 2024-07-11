@@ -39,8 +39,6 @@ def generate_cover_letter(state: GraphState, llm_model) -> GraphState:
     print("------ Application generation completed------")
     print("\n")
     print(" ------- ITERATION: ", iterations, " -------")
-
-    print(" ------ END OF COVER LETTER ------")
     print("\n")
 
 
