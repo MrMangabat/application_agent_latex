@@ -12,6 +12,7 @@ class GraphState(TypedDict):
         TypedDict: Base class for TypedDict.
     """
     error: str
+    error_tracking: int
     messages: Annotated[List[AnyMessage], add_messages]
     generation: str
     iterations: int

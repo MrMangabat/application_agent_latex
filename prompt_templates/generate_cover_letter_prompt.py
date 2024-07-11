@@ -47,7 +47,7 @@ def create_cover_letter_prompt(
 
     human_generate_cover_letter_template_str = """       
         Introduction section: Write four lines to generate an introduction with interest in IT and AI with inspiration from the {analysis_output}.
-        Motivation section: Write it using matching pairs {skill_match} and how these can be utilized for the company's benefit.
+        Motivation section: Write it short and use few examples found matching pairs {skill_match} and how these can be utilized for the company's benefit.
         What I Can Offer section: Write a section about what I can offer given my experiences found in {curriculum_vitae} and how they can be utilized for the company's benefit.
         Continued learning section: Provide short context that I am willing to learn what is necessary for the company and specific role.
         Thank you section: Write a short and concise thank you note to set up a coffee.
