@@ -8,9 +8,6 @@ jobtemplates/*
 companies_applied_for/*
 !companies_applied_for/
 
-jobtemplates/*
-!jobtemplates/
-
 latex_templates/*
 !latex_templates/
 
