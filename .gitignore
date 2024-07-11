@@ -1,8 +1,23 @@
+# Ignore specific files
 config.py
+
+# Ignore all files inside these folders but not the folders themselves
 jobtemplates/*
+!jobtemplates/
+
 companies_applied_for/*
+!companies_applied_for/
 
+jobtemplates/*
+!jobtemplates/
 
+latex_templates/*
+!latex_templates/
+
+curriculum_vitae/*
+!curriculum_vitae/
+
+# Ignore Python cache and environment folders
 __pycache__/
 *.pyc
 env/
